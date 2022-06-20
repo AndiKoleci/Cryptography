@@ -11,7 +11,6 @@ def encrypt(text, s):
         #Encrypt lowercase 
         else:
             result += chr((ord(char) + s-97) % 26 + 97)
-            
     return result   
 
 def decrypt(message):
