@@ -3,9 +3,10 @@ def encrypt(text, s):
     
     for i in range(len(text)):
         char = text[i]
-        
+        if(char==' '):
+            result += char;
         #Encrypt uppercase
-        if (char.isupper()):
+        elif (char.isupper()):
             result += chr((ord(char) + s-65) % 26 + 65)
         #Encrypt lowercase 
         else:
@@ -15,7 +16,7 @@ def encrypt(text, s):
 
 def decrypt(message):
     
-    LETTERS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ '
+    LETTERS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
     for key in range(len(LETTERS)):
         translated = ""
@@ -31,12 +32,11 @@ def decrypt(message):
         print('Hacking key #%s: %s' % (key, translated))
     
 
-text = "Mortii Mei"
-s = 4
+text = "Koleci Alexandru Paul"
+s = 12
 
 print(text)
 print(str(s))
-print(encrypt(text,s))
-
-message = "QsvxmmrQim" #encrypted message
-decrypt(message)
+coded = encrypt(text,s)
+print(coded)
+decrypt(coded)
